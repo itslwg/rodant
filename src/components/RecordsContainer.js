@@ -46,7 +46,7 @@ export default function RecordsContainer({
 				.map((d) => [d, validation[d]])
 
 			let issueDisplay = null
-
+			
 			if (issues.length > 0) {
 				issueDisplay = (
 					<span className="issues">
@@ -57,6 +57,7 @@ export default function RecordsContainer({
 			}
 
 			let locked = (d.locked || '').toString().toLowerCase() === 'true'
+
 			return (
 				<div key={d.uid}>
 					<Link
@@ -81,13 +82,14 @@ export default function RecordsContainer({
 							{getFieldText(codebook, d, sortField)}
 						</span>
 						<button
-							disabled={d.locked === 'TRUE'}
+							disabled={locked}
 							onClick={(e) => {
 								e.preventDefault()
 								openDialogue(d.uid)
 							}}
-							className={`button ${d.locked === 'TRUE' ? 'is-disabled' : ' is-danger'
-								} is-small is-outlined  remove`}
+							className={`button ${
+								locked ? 'is-disabled' : 'is-danger'
+							} is-small is-outlined remove`}
 						>
 							<span className="fa fa-remove" />
 						</button>
