@@ -372,7 +372,6 @@ function RecordPicker(props) {
 				db={props.db}
 				isLoading={isLoading}
 			/>
-
 			<SearchRecords
 				changeSearchText={changeSearchText}
 				onSearchFieldChanged={onSearchFieldChanged}
