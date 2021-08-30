@@ -55,6 +55,7 @@ export default function RecordsContainer({
 			}
 
 			let locked = (d.locked || '').toString().toLowerCase() === 'true'
+
 			return (
 				<div key={d.uid}>
 					<Link
@@ -82,7 +83,7 @@ export default function RecordsContainer({
 							disabled={d.locked === 'TRUE'}
 							onClick={(e) => {
 								e.preventDefault()
-								deleteRecord(d.uid)
+								deleteRecord(d.pid)
 							}}
 							className={`button ${
 								d.locked === 'TRUE' ? 'is-disabled' : ' is-danger'

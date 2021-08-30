@@ -95,7 +95,7 @@ function RecordPicker(props) {
 		props.history.push('/record/' + recordId)
 		updateRecords()
 	}
-
+	
 	async function deleteRecord(uid) {
 		if (window.confirm(`💣 Delete record: ${uid}?`)) {
 			await props.db.records.where('uid').equals(uid).delete()
