@@ -70,10 +70,10 @@ export default function RecordsContainer({
 						<span className="hits">
 							{searchHits[d.uid]
 								? searchHits[d.uid].slice(0, 10).map((e, i) => (
-										<span key={i}>
-											{e[0]}: {e[1]}
-										</span>
-								  ))
+									<span key={i}>
+										{e[0]}: {e[1]}
+									</span>
+								))
 								: null}
 						</span>
 						<span className="sort-field">
@@ -85,9 +85,8 @@ export default function RecordsContainer({
 								e.preventDefault()
 								deleteRecord(d.pid)
 							}}
-							className={`button ${
-								d.locked === 'TRUE' ? 'is-disabled' : ' is-danger'
-							} is-small is-outlined  remove`}
+							className={`button ${d.locked === 'TRUE' ? 'is-disabled' : ' is-danger'
+								} is-small is-outlined  remove`}
 						>
 							<span className="fa fa-remove" />
 						</button>
